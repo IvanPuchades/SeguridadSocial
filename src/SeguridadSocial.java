@@ -51,7 +51,19 @@ public class SeguridadSocial {
     }
 
     public List<Persona> obtenerPersonasMayoresQue(int edad){
-        personasList.stream().filter(persona -> persona.edad.max(edad));
+
+        ArrayList<Persona> temporal = new ArrayList<>();
+
+        for(Persona y : personasList){
+           if (y.getEdad() > edad){
+
+               temporal.add(y);
+
+
+           }
+       }
+
+       return  temporal;
 
     }
 
