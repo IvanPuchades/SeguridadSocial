@@ -20,8 +20,6 @@ public class SeguridadSocial {
 
 
         }
-
-        Boolean repetida = personasList.stream().anyMatch(p -> p.getDni().equals(persona.getDni()));
         if(!repetida){
             personasList.add(persona);
         }
