@@ -18,7 +18,7 @@ public class SeguridadSocial {
                 repe = true;
             }
 
-asdasdasdadawdadasdsz
+
         }
         if(!repetida){
             personasList.add(persona);
