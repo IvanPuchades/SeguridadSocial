@@ -39,13 +39,13 @@ public class SeguridadSocial {
 
     }
 
-    public Persona obtenerPersonaPorNumSS(String numSS) {
+    public Persona obtenerPersonaPorNumSS(int numSS) {
         personasList.stream().filter(persona -> persona.numSeguridadSocial.equals(numSeguridadSocial));
 
     }
 
     public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
-        personasList.stream().filter(persona -> persona.salario.avg(salario));
+        personasList.stream().filter(persona -> persona.salario.avg(salario)); //arreglar
 
 
     }
