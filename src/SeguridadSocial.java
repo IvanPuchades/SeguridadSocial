@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SeguridadSocial {
     private List<Persona> personasList;
@@ -35,18 +36,19 @@ public class SeguridadSocial {
     }
 
     public Persona obtenerPersonaPorDNI(String dni) {
-        return (Persona) personasList.stream().filter(persona -> persona.getDni().equals(dni));
+        return personasList.stream().filter(persona -> persona.getDni().equals(dni)).findFirst().get();
 
     }
 
     public Persona obtenerPersonaPorNumSS(int numSeguridadSocial) {
-        return (Persona) personasList.stream().filter(persona -> persona.getNumSeguridadSocial() == numSeguridadSocial);
+        return personasList.stream().filter(persona -> persona.getNumSeguridadSocial() == numSeguridadSocial).findFirst().get();
 
     }
 
     public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
 
-        return (List<Persona>) personasList.stream().filter(persona -> min >= persona.getSalario() &&  max <= persona.getSalario() );
+        return personasList.stream().
+                filter(persona -> min >= persona.getSalario() &&  max <= persona.getSalario()).collect(Collectors.toList());
 
 
 
