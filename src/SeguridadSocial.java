@@ -46,7 +46,7 @@ public class SeguridadSocial {
 
     public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
 
-        return (List<Persona>) personasList.stream().filter(persona -> min >= persona.getSalario() && persona.getSalario() <= max);
+        return (List<Persona>) personasList.stream().filter(persona -> min >= persona.getSalario() &&  max <= persona.getSalario() );
 
 
 
