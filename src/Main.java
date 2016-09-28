@@ -30,6 +30,6 @@ public class Main {
         System.out.println("obtenerPersonasMayoresQue: " + seguridadSocial.obtenerPersonasMayoresQue(25));
 
 
-
+//todobien
     }
 }

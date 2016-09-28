@@ -50,8 +50,6 @@ public class SeguridadSocial {
         return personasList.stream().
                 filter(persona -> min >= persona.getSalario() &&  max <= persona.getSalario()).collect(Collectors.toList());
 
-
-
     }
 
     public List<Persona> obtenerPersonasMayoresQue(int edad){
