@@ -29,23 +29,25 @@ public class SeguridadSocial {
     }
 
     public void bajaPersona(String dni) {
-        personasList.removeIf(persona -> persona.dni.equals(dni));
+        personasList.removeIf(persona -> persona.getDni().equals(dni));
 
 
     }
 
     public Persona obtenerPersonaPorDNI(String dni) {
-        personasList.stream().filter(persona -> persona.dni.equals(dni));
+        personasList.stream().filter(persona -> persona.getDni().equals(dni));
 
     }
 
     public Persona obtenerPersonaPorNumSS(int numSS) {
-        personasList.stream().filter(persona -> persona.numSeguridadSocial.equals(numSeguridadSocial));
+        return personasList.stream().filter(persona -> persona.getNumSeguridadSocial().equals(numSeguridadSocial()));
 
     }
 
     public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
-        personasList.stream().filter(persona -> persona.salario.avg(salario)); //arreglar
+
+        personasList.stream().filter(persona -> min >= persona.getSalario() && persona.getSalario() <= max);
+
 
 
     }
