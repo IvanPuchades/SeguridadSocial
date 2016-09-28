@@ -20,7 +20,7 @@ public class SeguridadSocial {
 
 
         }
-        if(!repetida){
+        if(!repe){
             personasList.add(persona);
         }
 
@@ -40,7 +40,7 @@ public class SeguridadSocial {
     }
 
     public Persona obtenerPersonaPorNumSS(int numSS) {
-        return personasList.stream().filter(persona -> persona.getNumSeguridadSocial().equals(numSeguridadSocial()));
+        return personasList.stream().filter(persona -> persona.getNumSeguridadSocial().equals(numSeguridadSocial());
 
     }
 
