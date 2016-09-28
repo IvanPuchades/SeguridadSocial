@@ -35,18 +35,18 @@ public class SeguridadSocial {
     }
 
     public Persona obtenerPersonaPorDNI(String dni) {
-        personasList.stream().filter(persona -> persona.getDni().equals(dni));
+        return (Persona) personasList.stream().filter(persona -> persona.getDni().equals(dni));
 
     }
 
-    public Persona obtenerPersonaPorNumSS(int numSS) {
-        return personasList.stream().filter(persona -> persona.getNumSeguridadSocial().equals(numSeguridadSocial());
+    public Persona obtenerPersonaPorNumSS(int numSeguridadSocial) {
+        return (Persona) personasList.stream().filter(persona -> persona.getNumSeguridadSocial() == numSeguridadSocial);
 
     }
 
     public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
 
-        personasList.stream().filter(persona -> min >= persona.getSalario() && persona.getSalario() <= max);
+        return (List<Persona>) personasList.stream().filter(persona -> min >= persona.getSalario() && persona.getSalario() <= max);
 
 
 
