@@ -25,7 +25,7 @@ public class SeguridadSocial {
             personasList.add(persona);
         }
 
-        boolean repetida = personasList.stream().anyMatch(p -> p.getDni().equals(persona.getDni())) || ;
+        boolean repetida = personasList.stream().anyMatch(p -> p.getDni().equals(persona.getDni())) ;
 
 
 
