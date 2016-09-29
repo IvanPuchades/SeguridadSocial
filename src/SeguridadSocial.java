@@ -88,7 +88,7 @@ public class SeguridadSocial {
     }
 
     public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
-
+    /*
         List <Persona> aux = new arrayList<>();
 
         for(persona persona:personaMapDni.values()){
@@ -96,7 +96,7 @@ public class SeguridadSocial {
                 aux.add(persona);
             }
         }
-
+    */
 
 
 
