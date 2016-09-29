@@ -25,6 +25,8 @@ public class SeguridadSocial {
             personasList.add(persona);
         }
 
+        boolean repetida = personasList.stream().anyMatch(p -> p.getDni().equals(persona.getDni())) || ;
+
 
 
     }
@@ -47,14 +49,14 @@ public class SeguridadSocial {
 
     public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
 
-        return personasList.stream().
-                filter(persona -> min >= persona.getSalario() &&  max <= persona.getSalario()).collect(Collectors.toList());
+        return personasList.stream().peek(content -> System.out.println("obtenerPersonasRangoSalarial antes de filtrar")).
+                filter(persona ->  persona.getSalario() >= min  &&   persona.getSalario() <= max).peek(content -> System.out.println("obtenerPersonasRangoSalarial despues de filtrar")).collect(Collectors.toList());
 
     }
 
     public List<Persona> obtenerPersonasMayoresQue(int edad){
 
-        ArrayList<Persona> temporal = new ArrayList<>();
+        /*ArrayList<Persona> temporal = new ArrayList<>();
 
         for(Persona y : personasList){
            if (y.getEdad() > edad){
@@ -65,7 +67,14 @@ public class SeguridadSocial {
            }
        }
 
-       return  temporal;
+
+
+
+
+       return  temporal;*/
+
+        return personasList.stream().filter(persona -> persona.getEdad() > edad).collect(Collectors.toList());
+
 
     }
 
