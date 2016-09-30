@@ -1,9 +1,6 @@
 import com.sun.javafx.collections.MappingChange;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class SeguridadSocial {
@@ -58,6 +55,7 @@ public class SeguridadSocial {
         /metodo con HashMap
 
         personaMapNumeroSS.remove(personaMapDni.get(dni).getNumSeguridadSocial());
+
           */
         personasList.removeIf(persona -> persona.getDni().equals(dni));
 
@@ -101,8 +99,9 @@ public class SeguridadSocial {
 
 
         //java 8 normal
-        return personasList.stream().peek(content -> System.out.println("obtenerPersonasRangoSalarial antes de filtrar")).
-                filter(persona ->  persona.getSalario() >= min  &&   persona.getSalario() <= max).peek(content -> System.out.println("obtenerPersonasRangoSalarial despues de filtrar")).collect(Collectors.toList());
+        return personasList.stream().
+                filter(persona ->  persona.getSalario() >= min  &&   persona.getSalario() <= max)
+                .collect(Collectors.toList());
 
     }
 
@@ -128,6 +127,10 @@ public class SeguridadSocial {
         return personasList.stream().filter(persona -> persona.getEdad() > edad).collect(Collectors.toList());
 
 
+    }
+
+    public Persona obtenerPersonaSalarioMaximo(){
+        return personasList.stream().max(Comparator.comparing(Persona::getSalario)).get();
     }
 
     public List<Persona> obtenerTodas(){
